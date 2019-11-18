@@ -36,8 +36,13 @@ export default class JobsList extends React.Component {
     ]
   };
 
-  getIdioma(){
-    return <FormattedMessage id="head" />
+  getIdioma = ()=> {
+    if(this.props.idm ==="es"){
+      return "thead-light"
+    }
+    else {
+      return "thead-dark";
+    }
   }
 
   render() {
