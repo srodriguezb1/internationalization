@@ -1,5 +1,6 @@
 import React from 'react';
 import Job from "./job";
+import { FormattedMessage } from 'react-intl';
 
 export default class JobsList extends React.Component {
 
@@ -11,7 +12,8 @@ export default class JobsList extends React.Component {
     	  "company": "Schneider Electric", 
     	  "salary": 4.5,
     	  "city": "Bogotá, Colombia",
-        "date": "2019-03-26"
+        "date": "2019-03-26",
+        "visits":2000
       }, 
       {
         "id": "0002",
@@ -19,7 +21,8 @@ export default class JobsList extends React.Component {
         "company": "Google Inc.", 
         "salary": 20,
         "city": "Palo Alto, CA, USA",
-        "date": "2019-03-27"
+        "date": "2019-03-27",
+        "visits":400000
       },
       {
         "id": "0003",
@@ -27,23 +30,29 @@ export default class JobsList extends React.Component {
         "company": "Clínica La Aurora", 
         "salary": 1,
         "city": "Cali, Colombia",
-        "date": "2019-03-28"
+        "date": "2019-03-28",
+        "visits":2060054
       }
     ]
   };
+
+  getIdioma(){
+    return <FormattedMessage id="head" />
+  }
 
   render() {
     return (
       <div>
         <table className="table">
-          <thead className="thead-dark">
+          <thead className={this.getIdioma()}>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Position</th>
-              <th scope="col">Company</th>
-              <th scope="col">Salary</th>
-              <th scope="col">City</th>
-              <th scope="col">Publication date</th>
+              <th scope="col"><FormattedMessage id ="Position"></FormattedMessage></th>
+              <th scope="col"><FormattedMessage id ="Company"></FormattedMessage></th>
+              <th scope="col"><FormattedMessage id ="Salary"></FormattedMessage></th>
+              <th scope="col"><FormattedMessage id ="City"></FormattedMessage></th>
+              <th scope="col"><FormattedMessage id ="PublicationDate"></FormattedMessage></th>
+              <th scope="col"><FormattedMessage id ="Views"></FormattedMessage></th>
             </tr>
           </thead>
           <tbody>
